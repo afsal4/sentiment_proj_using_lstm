@@ -2,9 +2,8 @@ import torch
 import re 
 import spacy
 import numpy as np 
-from spacy.cli import download
 
-download("en_core_web_md")
+
 
 
 class Text_preprocessor():

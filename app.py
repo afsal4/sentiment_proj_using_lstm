@@ -1,10 +1,11 @@
 import streamlit as st 
+
 import torch 
 from torch.nn import functional as F
 from text_preprocessor import Text_preprocessor
 import matplotlib.pyplot as plt 
 import matplotlib.animation as animation
-import numpy as np 
+
 
 PATH='sentiment_lstm_cpu.pt'
 

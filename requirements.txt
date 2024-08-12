@@ -1,3 +1,5 @@
 torch
 spacy
 streamlit
+matplotlib
+pandas

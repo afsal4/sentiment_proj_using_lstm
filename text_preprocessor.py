@@ -13,7 +13,7 @@ class Text_preprocessor():
         self.max_length = 0
         self.train_files = []
         self.test_files = []
-        self.nlp = spacy.load('en_core_web_md')
+        self.nlp = spacy.load('en_core_web_md_1/en_core_web_md-3.6.0/en_core_web_md/en_core_web_md-3.6.0')
         
     def preprocess(self, X_train, y_train, train=True):
         '''

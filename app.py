@@ -28,7 +28,9 @@ def show_piechart(values):
 
 
 def load_model(path):
-    return torch.jit.load(path)
+    model = torch.jit.load(path)
+    model.eval()
+    return model
 
 def predict(model, text, preprocessor):
     labels = ['Negative', 'Positive']
@@ -59,32 +61,11 @@ def main():
             except RuntimeError: 
                 print('Enter Longer text')
 
-    path = 'test_train_acc.png'
-    img1= plt.imread(path)
 
-    st.subheader('Performance')
-    st.image(img1, width=400)
-    st.markdown('#### Accuracy: ')
-    st.markdown('###### - Test accuracy: 0.8098235468070595')
-    st.markdown('###### - Train accuracy: 0.8685345317)')
-
-    st.subheader('Observations')
-    st.markdown('###### - Required positional info for understanding the context')
-    st.markdown('###### - Transformer network could perform better')
-    st.markdown('###### - Model is getting overfitted from a certain point onwards')
-    st.markdown('###### - Rnn network loses its performance after a certain point')
-
-    st.subheader('Network Architecture')
-    st.markdown('###### - LSTM layer')
-    st.markdown('###### - ReLU')
-    st.markdown('###### - Layer Normalization')
-    st.markdown('###### - Dropout p=0.3')
-    st.markdown('###### - Linear Layer')
-    st.markdown('###### - Softmax')
+    
 
     
 
 if __name__ == '__main__':
     main()
 
-''
